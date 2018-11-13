@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>遊戲</title>
+	<link rel="stylesheet" href="static/遊戲二級界面/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="static/遊戲二級界面/css/default.css">
+	<link rel="stylesheet" href="static/遊戲二級界面/css/index.css">
+	<style type="text/css">
+		#front-nav {
+			color: black;
+			padding:10px 0 0 10px;
+		}
+		#front-nav a{
+			text-decoration: none;
+			color: red;
+		}
+		#front-nav a{
+			text-decoration: none;
+
+		}
+		.bg img{
+		position: fixed;
+		top:0;
+		width: 100%;
+		height:100%;
+		opacity: 0.6;
+		z-index: -100;
+		}
+		.bg img{
+		position: fixed;
+		top:0;
+		width: 100%;
+		height:100%;
+		opacity: 0.6;
+		z-index: -100;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="bg">
+		<img src="/static/遊戲二級界面/imgs/game_backgroud.jpg" alt="">
+	</div>
+	<div id="front-nav">
+		{% if params.uname %}
+        <span>欢迎：{{params.uname}}</span><a href="/index" >[返回上一级]</a>
+		{% else %}
+			<a href="/index" >[返回上一级]</a>
+		{% endif %}
+		<!-- 这块把用户名写上-->
+	</div>
+
+	<div class="htmleaf-container">
+
+		<div class="htmleaf-content">
+			<div id="vitrine" class="container">
+				<div data-desc="海水魚">
+				<img src="static/遊戲二級界面/imgs/Hi_fish.png " name="sea-fish">
+				</div>
+				<div data-desc="JUMP">
+				<img src="static/遊戲二級界面/imgs/JUMP.jpg" name="JUMP">
+				</div>
+				<div data-desc="TypeGame">
+				<img src="static/遊戲二級界面/imgs/type.jpg" name="type">
+				</div>
+				<div data-desc="Fly_monkey">
+				<img src="static/遊戲二級界面/imgs/fly_monkey.jpg" name="fly_monkey">
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script src="static/遊戲二級界面/js/jquery-2.1.1.min.js"></script>
+	<script src="static/遊戲二級界面/js/jQuery.vitrine.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#vitrine').vitrine({title:'遊戲种类',color:'#fff'});
+		});
+	</script>
+
+	<script type="text/javascript">
+
+		$(function(){
+		    $("[name='sea-fish']").dblclick(function(){
+		        location.href='/game?game='+$(this).attr('name')
+			});
+
+		    $("[name='ch-ja']").dblclick(function(){
+		        location.href='/game?game='+$(this).attr('name')
+			});
+
+		    $("[name='ch-co']").dblclick(function(){
+		        location.href='/game?game='+$(this).attr('name')
+			});
+
+		    $("[name='ch-ge']").dblclick(function(){
+		        location.href='/game?game='+$(this).attr('name')
+			});
+
+		    $("[name='ch-po']").dblclick(function(){
+		        location.href='/game?game='+$(this).attr('name')
+			});
+		});
+
+	</script>
+</body>
+</html>

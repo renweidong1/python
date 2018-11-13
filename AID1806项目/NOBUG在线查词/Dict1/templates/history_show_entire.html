@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>查詢</title>
+	<link rel="stylesheet" type="text/css" href="static/查询界面/css/搜索部分.css">
+	<script src="static/查询界面/js/jquery-1.11.0.min.js"></script>
+	<script SRC="static/查询界面/js/common.js"></script>
+	<style>
+		#front-nav {
+			color: black;
+			padding:10px 0 0 10px;
+		}
+		#front-nav a{
+			text-decoration: none;
+			color: red;
+		}
+		#front-nav a:hover {
+			color:blue;
+		}
+		.bg img{
+		position: fixed;
+		top:0;
+		width: 100%;
+		height:100%;
+		opacity: 0.6;
+		z-index: -100;
+		}
+		#prevnext{
+			margin-bottom: 100px;
+		}
+		#prevnext a{
+			text-decoration: none;
+			color:#00e5ff;
+		}
+		#prevnext a:hover{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+  	<div id="front-nav" >
+    	{% if params.uname %}
+        <span>欢迎：{{params.uname}}</span><a href="/history_show?dict={{params.dict}}" >[返回上一级]</a>
+		{% else %}
+			<a href="/history_show?dict={{params.dict}}" >[返回上一级]</a>
+		{% endif %}
+  	</div>
+	<div class="bg">
+		<img src="/static/历史记录/imgs/history-backgroud.jpg" alt="">
+	</div>
+
+	<div id="search-content" style="width: 600px;margin: 0 auto;">
+		<h2 id="word">
+			<span>{{params.word_sea.word}}</span>
+		</h2>
+		<div id="prononce">
+			{% if params.yinbiao_ying %}
+			<span class="en">{{params.yinbiao_ying.0}}</span>
+			<img class="ying" src="static/查询界面/imgs/喇叭.png" style="width: 20px;height: 16px;">
+			<audio id="ying" src="{{params.yinbiao_ying.1}}"></audio>&nbsp;&nbsp;&nbsp;
+			<span class="am">{{params.yinbiao_mei.0}}</span>
+			<img class="mei" src="static/查询界面/imgs/喇叭.png" style="width: 20px;height: 16px;">
+			<audio id="mei" src="{{params.yinbiao_mei.1}}"></audio>
+			{% endif %}
+		</div><hr>
+		<div>
+		{% if params.jieshis %}
+
+			{% for jieshi in params.jieshis %}
+				<p style="margin: 7px 0">
+				<span id="interpret" style="display:inline-block;background-color: #aaa;width: 40px;text-align: center;margin-right: 10px">{{jieshi.0}}</span><span>{{jieshi.1}}</span>
+				</p>
+			{% endfor %}
+			{% endif %}
+		</div><hr>
+		<div>
+			<ol style="list-style-type: square" >
+				{% for liju in params.lijus %}
+					<li id="interpret" >{{liju.0}}</li>
+					<p>{{liju.1}}</p>
+				{% endfor %}
+			</ol>
+		</div>
+		<div id="prevnext">
+			<span>
+				上一个：{% if params.prevword %}
+				<a href="/history_show_entire?word={{params.prevword.word}}&id={{params.prevword.id}}&dict={{params.dict}}">{{params.prevword.word}}</a>
+					{% else %}
+				<a href="/history_show?dict={{params.dict}}">返回列表</a>
+				{% endif %}
+
+			</span>
+			<span style="float:right;">
+				下一个：{% if params.nextword %}
+				<a href="/history_show_entire?word={{params.nextword.word}}&id={{params.nextword.id}}&dict={{params.dict}}">{{params.nextword.word}}</a>
+					{% else %}
+				<a href="/history_show?dict={{params.dict}}">返回列表</a>
+				{% endif %}
+
+			</span>
+		</div>
+	</div>
+	<script>
+		$(function(){
+		    $('.ying').click(function(){
+		        var ying = document.getElementById('ying');
+		        ying.load();
+		        ying.play();
+			});
+			$('.mei').click(function(){
+		        var mei = document.getElementById('mei');
+		        mei.load();
+		        mei.play();
+			})
+		})
+	</script>
+
+</body>
+</html>

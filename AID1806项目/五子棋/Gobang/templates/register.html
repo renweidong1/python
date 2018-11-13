@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>用户注册</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="../static/images/web.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../static/css/register.css" type="text/css">
+    <script>
+        function user_solely(){
+            if('{{solely}}' == '0'){
+                alert('该用户已存在');
+            }
+            if('{{solely}}' == '1'){
+                alert("两次输入的密码不一致，请重新输入！");
+            }
+        }
+    </script>
+</head>
+<body onload="user_solely();">
+	<form action="/register" method="post" >
+		<h1 style="height: 60px;"></h1>
+		<hr>
+		<h1 style="font-size: 35px; color: #C87E32; margin-left: 650px;">用户注册</h1>
+		<div class="d1">
+			<div class="d2">
+				用户名称 :
+				<input type="text" name="uname" class="d3" required AUTOCOMPLETE="off" maxlength="16" placeholder="名称最长为16个字符">
+				<p></p>
+				设置密码 :
+				<input type="password" name="pwd1" id="pwd1" class="d3" placeholder="请输入8-20位字符" minlength="8" maxlength="20" required>
+				<p></p>
+				确认密码 :
+				<input type="password" name="pwd2" id="pwd2" class="d3" placeholder="请输入8-20位字符" minlength="8" maxlength="20" required>
+			</div>
+			<div>
+				<input type="submit" class="d4" value="提交注册">
+			</div>
+		</div>
+	</form>
+</body>
+</html>
+
+
+

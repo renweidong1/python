@@ -1,0 +1,210 @@
+@charset "utf-8";
+
+a {
+    text-decoration: none;
+}
+.header{
+    background: url("/static/images/index-head-bg.png") repeat;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 800px;
+    position: relative;
+}
+.contion{
+    width: 900px;
+    text-align: center;
+    margin: 200px auto;
+    /*border: 1px solid #fff;*/
+    color: #fff;
+}
+.contion > h1{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin: 0 0 22px 0;
+    color: #fff;
+}
+.contion ul li{
+    display: inline-block;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    color: #bcbcbc;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0 5px 0 0;
+    padding: 0 0 0 15px;
+}
+.contion a{
+    padding: 15px 35px;
+    /* background: #7cc576; */
+    background: #00a79d;
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    border-radius: 3px;
+    text-transform: uppercase;
+    line-height: 25px;
+    margin-top: 30px;
+}
+/*.fixed-nav{*/
+    /*position: relative;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*width: 100%;*/
+/*}*/
+.container{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    border-bottom: 3px solid #cccccc;
+}
+.main-nav, .main-nav li{
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.main-nav{
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+
+    position: relative;
+}
+.main-nav li{
+    list-style: none;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+
+    position: relative;
+    top: -20px;
+}
+.main-nav li a{
+    text-decoration: none;
+    color: #222222;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+.main-nav li.small-logo{
+    top: 0;
+}
+.main-nav li.small-logo a{
+    margin: 0;
+    padding: 0;
+}
+.main-nav li a:hover{
+    outline: 0 !important;
+    color: #00a79d;
+}
+img.navLogo{
+    width: 60px;
+    height: 60px;
+    background: #cccccc;
+    padding: 10px;
+    border-radius: 30%;
+}
+
+/* user-bar */
+.user-btn{
+    cursor: pointer;
+}
+.user-box{
+    display: none;
+}
+
+/* page-three */
+.notweb{
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px;
+}
+.pic-box {
+    position: relative;
+    transition: all .1s ease;
+    overflow: hidden;
+    width: 300px;
+    margin: 10px 80px;
+    /*border-radius: 6%;*/
+}
+.pic-box:hover{
+    transform: scale(1.05);
+}
+.pull-left {
+    float: left;
+}
+.hd-pic {
+    height: 130px;
+    position: relative;
+    border-bottom:1px solid #000;
+}
+.md-2018040201-lty .pic-box .hd-pic img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+.bd-word {
+    padding: 15px;
+    font-size: 12px;
+}
+.bgcolor-fff {
+    background: #fff;
+}
+.bd-word .bd-tit {
+    font-size: 14px;
+    line-height: 20px;
+    height: 40px;
+    /* text-overflow: ellipsis; */
+    overflow: hidden;
+    width: 100%;
+    /* white-space: nowrap; */
+    margin-bottom: 12px;
+}
+.color-333 {
+    color: #333;
+}
+
+/* footer */
+.footer{
+    width: 100%;
+    height: 300px;
+    background: url("/static/images/index-head-bg.png") repeat;
+    float: left;
+}
+.team{
+    display: inline-block;
+    width: 230px;
+    height: 230px;
+    padding-top: 30px;
+    margin-left: 30px;
+    color: #ccc;
+    font-size: 20px;
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+}
+.team li{
+    list-style: none;
+    margin-left: 50px;
+    position: relative;
+}
+.team li.title{
+    margin: 0;
+}
+
+
+
+.nav-ws{
+    padding: 23px;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+}

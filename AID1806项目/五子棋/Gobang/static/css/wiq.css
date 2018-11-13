@@ -1,0 +1,43 @@
+body{
+    background-image: url('../images/4.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.box{
+    width: 680px;
+    height: 680px;
+    background: url(../images/55.png)no-repeat;
+    background-size: cover;
+    margin: 30px auto;
+    border:1px solid #000000;
+}
+div.open{
+    position: absolute;
+    left: 1100px;
+    top: 150px;
+    width: 200px;
+    text-align: center;
+}
+.open a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-bottom: 39px;
+    margin-right: 8px;
+    margin-left: 8px;
+    background: rgb(100, 167, 233);
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "微软雅黑", "宋体";
+}
+.open a:hover {
+    background: rgb(48, 148, 247);
+    text-decoration: none;
+}
+.open #mytime{
+    padding-left: 65px;
+    font-size: 18px;
+    background-color: transparent;
+    border: 0px;
+}

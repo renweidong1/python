@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>五子棋</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="../static/images/web.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="../static/css/wait_login.css">
+	<script src="/static/js/common.js"></script>
+	<script src="/static/js/jquery.min.js"></script>
+	<script src="/static/js/socket.io.slim.js"></script>
+<script>
+	var user_name = "{{username}}";
+	$(document).ready(function () {
+		var socket = io.connect();
+		socket.on("begin",function (data) {
+			if(data['wait']=="0") {
+			    console.log(data);
+			    if(data['name']==user_name){
+					$(".d4").html("");
+					$(".d7").attr("value",user_name);
+					var html = "<input type='submit' value='点击开始对战' style='font-size: 24px;text-decoration:none;color:white;text-align: center;background-color: transparent;border: 0px;'>";
+					$(".d5").html(html);
+					return false;
+				}
+				if(data['name1']==user_name){
+					$(".d4").html("");
+					$(".d7").attr("value",user_name);
+					var html = "<input type='submit' value='点击开始对战' style='font-size: 24px;text-decoration:none;color:white;text-align: center;background-color: transparent;border: 0px;'>";
+					$(".d5").html(html);
+					return false;
+				}
+			}
+        });
+		$(".d2").click(function () {
+			socket.emit("go_game",{"name":user_name})
+		});
+    });
+</script>
+</head>
+<body>
+	<div class="d1">
+		<div>
+			<button class="d2">玩家对战(点我)</button>
+		</div>
+		<div class="d3">
+			<span class="d4">匹配对手中请稍后...</span>
+		</div>
+		<form action="/game" method="post">
+			<input type="text" name='users' class="d7" style="display:none;">
+			<div class="d5">
+
+			</div>
+		</form>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>五子棋</title>
+	<meta charset="utf-8">
+    <link rel="shortcut icon" href="../static/images/web.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../static/css/wiq.css">
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/socket.io.slim.js"></script>
+    <script src="../static/js/wiq.js"></script>
+</head>
+<body onload="init();">
+   <div class="box" onmousedown="voice(url)">
+       <canvas id="can" width="680px" height="680px"></canvas>
+   </div>
+   <form action="/game" method="post">
+       <div class="open">
+           <input type="text" id="u_name" name='users' style="display:none;">
+           <a id="replay_btn" class="btn" href="#" >{{color}}</a>
+           <p></p>
+           <p></p>
+           <!--<a id="replay_end" class="end" href="/exit">退出</a>-->
+           <input>
+        </div>
+   </form>
+</body>
+<script>
+    var user_name = '{{name}}';
+    var click_wiq;
+    var black_1 = new Image();
+    var white_1 = new Image();
+    black_1.src = "../static/images/black.png";
+    white_1.src = "../static/images/white.png";
+    if("{{isblack}}"=='1'){
+        click_wiq = true;
+    }
+    if("{{isblack}}"=='0'){
+        click_wiq = false;
+    }
+    $("#u_name").attr('value',user_name);
+    var w = document.documentElement.clientWidth;
+    var w1=w/2-340;
+    $(document).ready(function () {
+        var socket = io.connect();
+        $(".box").click(function (e) {
+            if(click_wiq){
+                if(e.clientX <(w1+50) || e.clientX>(w1+630) || e.clientY < 80 || e.clientY>660){}
+                else{
+                    x = (e.clientX-w1-60)/40;
+                    if(x>=(parseInt(x)+0.5)){
+                        x = parseInt(x)+1;
+                    }else{
+                        x = parseInt(x);
+                    }
+                    y = (e.clientY-90)/40;
+                    if(y>=(parseInt(y)+0.5)){
+                        y = parseInt(y)+1;
+                    }
+                    else{
+                        y = parseInt(y);
+                    }
+                    socket.emit('msg_handling',{'x':x,'y':y,'name':user_name});
+                    click_wiq =false
+                }
+            }
+        });
+        socket.on('result_reduction',function (data) {
+            if(data['victory'] == ""){
+                x = parseInt(data['x']);
+                y = parseInt(data['y']);
+                if(data['names']==user_name){
+                    click_wiq = true;
+                    if(x>=0){
+                        if (data['black'] == '1') {
+                            ctx.drawImage(black_1, x * 40 + 40, y * 40 + 40);
+                        }else {
+                            ctx.drawImage(white_1, x * 40 + 40, y * 40 + 40);
+                        }
+                    }
+                }
+                if(data['name1']==user_name){
+                    if (data['black'] == '1') {
+                        ctx.drawImage(black_1, x * 40 + 40, y * 40 + 40);
+                    }else {
+                        ctx.drawImage(white_1, x * 40 + 40, y * 40 + 40);
+                    }
+                }
+            }else {
+                x = data['x'];
+                y = data['y'];
+                if(data['black'] == '1'){
+                    ctx.drawImage(black_1,x*40+40,y*40+40);
+                }else{
+                    ctx.drawImage(white_1,x*40+40,y*40+40);
+                }
+                if(data['victory'] == "1"){
+                    alert('黑子胜');
+                    var html = "<input type='submit' value='重开' style='background-color: transparent;font-size: 16px;font-family: '"+"微软雅黑"+","+"宋体';"+"'>";
+                    $("#replay_btn").html(html);
+                    return false
+                }
+                if(data['victory'] == "2"){
+                    alert('白子胜');
+                    var html = "<input type='submit' value='重开' style='background-color: transparent; border: 0px;'>";
+                    $("#replay_btn").html(html);
+                    return false
+                }
+            }
+        });
+    });
+    alert('黑子先行');
+</script>
+</html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>登錄界面</title>
+	<link rel="stylesheet" type="text/css" href="static/注册登录界面/css/default.css">
+	<link rel="stylesheet" href="static/注册登录界面/css/materialize.min.css">
+	<style type="text/css">
+	html,
+	body {
+		width: 100%;
+	    height: 100%;
+	}
+	html {
+	    display: table;
+	    margin: auto;
+	}
+	#login-page{
+		width: 400px;
+	}
+	/*body {*/
+	    /*display: table-cell;*/
+	    /*vertical-align: middle;*/
+	/*}*/
+
+	.margin {
+	  margin: 0 !important;
+	}
+	.bg img{
+		position: fixed;
+		top:0;
+		width: 100%;
+		height:100%;
+		opacity: 0.6;
+		z-index: -100;
+		}
+</style>
+</head>
+<body>
+	<div class="bg">
+		<img src="/static/注册登录界面/imgs/backgroud.jpg" alt="">
+	</div>
+	<div id="login-page" class="row">
+	    <div class="col s12 z-depth-6 card-panel" style="margin-top: 200px;">
+	      <form class="login-form" action="/login" method="post">
+	        <div class="row">
+	          <div class="input-field col s12 center">
+	            <img src="static/注册登录界面/imgs/logo.png" alt="" class="responsive-img valign profile-image-login" style="text-align: center;">
+	          </div>
+	        </div>
+	        <div class="row margin">
+	          <div class="input-field col s12">
+	            <i class="mdi-social-person-outline prefix"></i>
+				<!--解决表单自动填充-->
+				<input type="text" name="uname1" style="display: none;">
+				<input type="password" name="upwd1" style="display: none;">
+	            <input id="username" type="text" placeholder="Username" name="uname" value="{{params.uname}}">
+	            <span class="reminder" style="color: red">{{params.err}}</span>
+	          </div>
+	        </div>
+	        <div class="row margin">
+	          <div class="input-field col s12">
+	            <i class="mdi-action-lock-outline prefix"></i>
+	            <input id="password" type="password" placeholder="Password" name="upwd" value="{{params.upwd}}">
+				<span class="reminder" style="color: red"></span>
+	          </div>
+	        </div>
+	        <div class="row">          
+	          <div class="input-field col s12 m12 l12  login-text">
+				  {% if params.err %}
+				  	<input type="checkbox" id="remember-me" name="isSaved" >
+				  {% elif params.uname %}
+	              	<input type="checkbox" id="remember-me" name="isSaved" checked>
+				  {% else %}
+				  	<input type="checkbox" id="remember-me" name="isSaved" >
+				  {% endif %}
+	              <label for="remember-me">记住我</label>
+	          </div>
+	        </div>
+	        <div class="row">
+	          <div class="input-field col s12">
+
+	            <input type="submit" value="登　录" style="width:100%;height:40px;background-color:#26a69a;color:#fff">
+
+	          </div>
+	        </div>
+	        <div class="row">
+	          <div class="input-field col s6 m6 l6">
+	            <p class="margin medium-small"><a href="/register">现在注册!</a></p>
+	          </div>
+	          <div class="input-field col s6 m6 l6">
+	              <p class="margin right-align medium-small"><a href="/forgot">忘记密码?</a></p>
+	          </div>          
+
+	      </form>
+	    </div>
+	  </div>
+	  </div>
+	
+	<script src="static/注册登录界面/js/jquery-1.11.0.min.js"></script>
+  	<!--materialize js-->
+  	<script src="static/注册登录界面/js/materialize.min.js"></script>
+  	<script type="text/javascript">
+  		 $(function(){
+  	 		$('form').submit(function(){
+			 	// 在提交按钮被点击时自动触发，验证表单。
+			 	if ($('#username').val() ==''){
+			 		$('#username +.reminder').html('用户名不能为空')
+					
+			 		return false;
+			 	}
+			 	return true;
+			 });
+  	 		$('#username').click(function(){
+  	 			$('#username +.reminder').html('')
+  	 		});
+
+
+  	 		$('#username').blur(function(){
+			 	// 在提交按钮被点击时自动触发，验证表单。
+			 	if($('#username').val().length <6 || $('#username').val().length>18){
+			 		$('#username +.reminder').html('请输入6-18位的字符')
+			 	}else if($('#username').val().match(/\W/ig)!=null){
+			 		$('#username +.reminder').html('请输入合法字符')
+			 	}else if ($('#username').val().match(/\W/ig) == null){
+			 		$('#username +.reminder').html('用户名合法')
+			 		$('#username +.reminder').css('color','green')
+			 	}
+					
+			});
+
+  	 		$('#password').blur(function(){
+			    if($('#password').val().length <6 || $('#username').val().length>18){
+					$('#password +.reminder').html('请输入6-18位的字符')
+				}else if($('#username').val().match(/\W/ig)!=null){
+					$('#password +.reminder').html('请输入合法字符')
+				}else{
+				    $('#password +.reminder').html('✔')
+				}
+			});
+
+  		 });
+  	</script>
+</body>
+</html>

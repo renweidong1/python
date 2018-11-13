@@ -1,0 +1,121 @@
+.course-artificial-intelligencen-dowork {
+  font-size: 17px;
+  width: 1300px;
+  height: 1000px;
+  background: #f9f9f9;
+  padding: 60px 0 80px;
+    margin: 0 auto;
+}
+.mz-tb-tit{
+    font-size: 33px;
+}
+.page-three{
+    width: 100%;
+    background: #f9f9f9;
+}
+.fr {
+    float: right;
+}
+.fl{
+    float: left;
+}
+.course-artificial-intelligencen-dowork-list {
+  overflow: hidden;
+  position: relative;
+  padding-top: 60px; }
+
+.course-artificial-intelligencen-dowork-item {
+  float: left;
+  width: 290px;
+  margin: 0 5px; }
+
+.course-artificial-intelligencen-dowork-item-ts {
+  width: 890px;
+  height: 220px;
+  position: absolute;
+  left: 0;
+  bottom: 0; }
+  .course-artificial-intelligencen-dowork-item-ts .course-artificial-intelligencen-dowork-txt {
+    width: 290px;
+    height: 220px; }
+  .course-artificial-intelligencen-dowork-item-ts .course-artificial-intelligencen-dowork-pic {
+    width: 600px;
+    height: 220px; }
+
+.course-artificial-intelligencen-dowork-pic {
+  overflow: hidden; }
+  .course-artificial-intelligencen-dowork-pic:hover img {
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02); }
+  .course-artificial-intelligencen-dowork-pic img {
+    display: block;
+    width: 100%;
+    transition: .4s;
+    -webkit-transition: .4s; }
+
+.course-artificial-intelligencen-dowork-item-ts01 .course-artificial-intelligencen-dowork-txt {
+  height: 230px;
+  padding-top: 46px; }
+
+.course-artificial-intelligencen-dowork-txt {
+  text-align: center;
+  width: 290px;
+  height: 160px;
+  padding: 16px 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #fff; }
+  .course-artificial-intelligencen-dowork-txt h6 {
+    line-height: 46px;
+    color: #333333;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 20px; }
+  .course-artificial-intelligencen-dowork-txt p {
+    color: #888888;
+    line-height: 26px; }
+  .newai-online {
+  padding: 64px 0 80px; }
+
+.newai-online-list {
+  width: 892px;
+  margin: 0 auto;
+  padding: 30px 20px 60px; }
+  .newai-online-list li {
+    background: #fff;
+    padding: 40px 0 40px 84px;
+    border-radius: 75px;
+    box-shadow: 0 4px 20px rgba(90, 112, 224, 0.3);
+    -webkit-box-shadow: 0 4px 20px rgba(90, 112, 224, 0.3);
+    margin-top: 30px; }
+  .newai-online-list i {
+    display: block;
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+    float: left;
+    background-image: url(/static/images/mxl_images/land/newai-bg.png); }
+
+.newai-list-txt {
+  width: 600px;
+  float: left;
+  margin-left: 40px; }
+  .newai-list-txt h4 {
+    line-height: 1;
+    font-size: 24px;
+    color: #333333; }
+  .newai-list-txt p {
+    font-size: 16px;
+    line-height: 36px;
+    margin-top: 12px; }
+
+.newai-list-pic02 {
+  background-position: center -80px; }
+
+.newai-list-pic03 {
+  background-position: center -160px; }
+.pt60{
+  padding-top:60px;
+}

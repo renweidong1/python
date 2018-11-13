@@ -1,0 +1,115 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<title>歷史記錄</title>
+
+	<style>
+        html,body,table,p,div{
+            margin:0;
+            padding: 0;
+        }
+        #container{
+            width:500px;
+            margin:30px auto;
+        }
+        #container .first-line{
+            width: 500px;
+            height: 25px;
+            border-top: 2px solid black;
+            border-bottom:1px dashed black;
+            line-height: 25px
+        }
+        #container div{
+            width: 500px;
+            height: 25px;
+            border-bottom:1px dashed black;
+            line-height: 25px;
+        }
+
+
+        #front-nav {
+			color: black;
+			padding:10px 0 0 10px;
+		}
+		#front-nav a{
+			text-decoration: none;
+			color: red;
+		}
+		#front-nav a:hover {
+			color:blue;
+		}
+        #title{
+            width: 200px;
+            height: 100px;
+            display: block;
+            margin:0 auto;
+        }
+
+         #title img{
+            width: 200px;
+            height: 100px;
+             display: block;
+            margin:0 auto;
+        }
+        .bg img{
+		position: fixed;
+		top:0;
+		width: 100%;
+		height:100%;
+		opacity: 0.6;
+		z-index: -100;
+		}
+
+        #content a{
+            text-decoration: none;
+			color: black;
+        }
+        #content a:hover {
+			color:blue;
+		}
+
+	</style>
+</head>
+<body>
+  <div id="front-nav">
+    {% if params.uname %}
+        <span>欢迎：{{params.uname}}</span><a href="/history_kinds" >[返回上一级]</a>
+    {% else %}
+        <a href="/history_kinds" >[返回上一级]</a>
+    {% endif %}
+  </div>
+    <div class="bg">
+		<img src="/static/历史记录/imgs/history-backgroud.jpg" alt="">
+	</div>
+    <div id="title">
+        <img src="/static/历史记录/imgs/history-logo.png">
+    </div>
+	<div id="container">
+
+        <hr>
+
+        {% for hist in params.hists%}
+            <div id="content">
+                <span>{{loop.index}}：</span>
+                <a href="/history_show_entire?word={{hist.word}}&dict={{params.dict}}&&id={{hist.id}}">{{hist.word}}</a>
+            </div>
+        {% endfor %}
+
+
+
+        <!--{% for i in range(19) %}-->
+            <!--<div>-->
+                <!--{{params.hists}}.{{loop.index}}-->
+            <!--</div>-->
+
+        <!--{% endfor %}-->
+    </div>
+    <script src="/static/历史记录/js/jquery-2.1.1.min.js"></script>
+    <script>
+//        {% for hist in params.hists%}
+//            $('[class={{loop.index}}]')
+//        {% endfor %}
+
+    </script>
+</body>
+</html>

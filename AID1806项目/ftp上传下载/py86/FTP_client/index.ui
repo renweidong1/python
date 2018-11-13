@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>745</width>
+    <height>491</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QPushButton" name="put_file">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>20</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(181, 181, 181);
+font: 18pt &quot;Algerian&quot;;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>上传</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="load_file">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>120</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(181, 181, 181);
+font: 18pt &quot;Algerian&quot;;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>下载</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="myList">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>481</width>
+     <height>411</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="update_file">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>320</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(181, 181, 181);
+font: 18pt &quot;Algerian&quot;;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>刷新</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="exit_file">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>430</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 18pt &quot;Algerian&quot;;
+background-color: rgb(85, 85, 255);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progressBar">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>440</y>
+     <width>411</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_fileInfo">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>440</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+     <kerning>true</kerning>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="delete_file">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>220</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(181, 181, 181);
+font: 18pt &quot;Algerian&quot;;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>删除</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>put_file</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>put()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>637</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>698</x>
+     <y>59</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>load_file</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>download()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>615</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>150</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>delete_file</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>delete()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>629</x>
+     <y>251</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>651</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>update_file</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>refresh()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>622</x>
+     <y>344</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>377</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>exit_file</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>exit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>680</x>
+     <y>448</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>680</x>
+     <y>474</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>put()</slot>
+  <slot>download()</slot>
+  <slot>refresh()</slot>
+  <slot>exit()</slot>
+  <slot>delete()</slot>
+ </slots>
+</ui>

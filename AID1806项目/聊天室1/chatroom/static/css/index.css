@@ -1,0 +1,128 @@
+/*1. 清除浏览器的默认样式*/
+body,h2,p{
+    margin: 0;
+}
+#container{
+    width: 990px;
+    margin: 0 auto;
+}
+#container h2{
+    /**/
+    font-weight: normal;
+    color: #eee;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+.left{
+    margin: 20px;
+    float: left;
+    position: relative;
+}
+.right{
+    float: right;
+    margin-top: 70px;
+    margin-right: 40px;
+}
+.form-line>p{
+    float: left;
+    color: #eee;
+    width: 64px;
+    /*跟输入框的高度保持一致*/
+    height: 40px;
+    text-align: right;
+    line-height: 40px;
+    margin-right: 40px;
+}
+.form-line>input,.form-line>div{
+    float: right;
+    width: 300px;
+}
+.form-control{
+    /*宽高 边框 边距*/
+    box-sizing: border-box;
+    width: 300px;
+    height: 40px;
+    border: 1px solid #eee;
+    /*轮廓线*/
+    outline: none;
+    padding: 0 12px;
+    /*文本颜色*/
+    color: #eee;
+    /*默认输入框的字体大小为13.33px*/
+    font-size: 16px;
+
+}
+.form-line{
+    margin-top: 20px;
+    /*由于子元素都浮动了, 所以每行的 div 需要单独指定高度*/
+    height: 40px;
+    color: #eee;
+
+}
+.forget{
+    float: right;
+}
+
+.isSaved{
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+.forget a{
+    color: #eee;
+
+}
+.loginBtn,.registBtn{
+    box-sizing: border-box;
+    width: 145px;
+    height: 38px;
+    border: 1px solid rgba(26, 19, 100, 0.6);
+    text-align: center;
+    line-height: 38px;
+    border-radius: 5px;
+    /*字体大小*/
+    font-size: 18px;
+}
+.registBtn{
+    float: right;
+    text-decoration: none;
+    color: #ddd;
+}
+.loginBtn{
+    background-color:rgba(46, 48, 146, 0.5);
+    color: #fff;
+}
+.left{
+    position: relative;
+}
+.left>a{
+    box-sizing: border-box;
+    width: 150px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    border: 1px solid rgba(26, 19, 100, 0.6);
+    text-decoration: none;
+    color: #ccc;
+    border-radius: 5px;
+    /*定位布局*/
+    position: absolute;
+    float: right;
+    right: 173px;
+    bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

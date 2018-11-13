@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>聊天窗口</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/style.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div id="convo" data-from="Sonu Joshi">
+        <ul class="chat-thread">
+            <li class="left">找我干啥呢？亲</li>
+        </ul>
+        <div class="formstyle">
+            <form class="bs-example bs-example-form" role="form">
+                <div class="input-group input-group-lg">
+                    <input type="text" class="form-control" placeholder="点击输入">
+                    <span id="buttons" class="input-group-addon">发送</span>
+                </div>
+                <br>
+                <input type="text" style="display:none;">
+            </form>
+        </div>
+    </div>
+    <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+    </div>
+</body>
+
+</html>
+<script src="/static/js/xhr-script.js"></script>
+<script>
+
+$('#buttons').click(aiTalk);
+$('.form-control').keypress(function (e) {
+    if (e.which == 13){
+        aiTalk();
+    }
+});
+
+function aiTalk() {
+    // 获取数据框中的数据并清空
+    var form_val = $('.form-control').val();
+    $('.chat-thread').append('<li class="right">' + form_val + '</li>');
+    $('.form-control').val('');
+
+    // 异步请求
+    var xhr = getXhr();
+    xhr.open('post', '/aiserver', true);
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+                console.log(xhr.responseText)
+                $('.chat-thread').append('<li class="left">' + xhr.responseText + '</li>');
+                $('.chat-thread').scrollTop($('.chat-thread')[0].scrollHeight);
+        }else{
+            console.log('???')
+        }
+    };
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    msg = 'word='+form_val;
+    console.log(msg);
+    xhr.send(msg);
+
+    $('.chat-thread').scrollTop($('.chat-thread')[0].scrollHeight);
+}
+
+
+
+
+$('#button').click(function() {
+    var form_val = $('.form-control').val();
+    $('.chat-thread').append('<li class="right">' + form_val + '</li>');
+    $('.form-control').val('');
+
+    $.post("/airoot", { word: form_val }, function(data) {
+        console.log(data);
+        $('.chat-thread').append('<li class="left">' + data + '</li>');
+        $('.chat-thread').scrollTop($('.chat-thread')[0].scrollHeight);
+    });
+
+    $('.chat-thread').scrollTop($('.chat-thread')[0].scrollHeight);
+});
+
+var height = $(window).height() * 0.8;
+$('.chat-thread').css('height', height);
+</script>

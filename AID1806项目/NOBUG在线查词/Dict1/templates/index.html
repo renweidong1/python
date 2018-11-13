@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>主界面</title>
+<style>
+	body{
+		font-family: "microsoft yahei";
+	}
+	.seq-feature:hover {
+		cursor: pointer;
+	}
+
+</style>
+<link href="static/一级界面/css/sequence-theme.mono.css" rel="stylesheet" media="all">
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#front-nav {
+	color: black;
+	padding:10px 0 0 10px;
+}
+#front-nav a{
+	text-decoration: none;
+	color: red;
+}
+#front-nav .nouser a{
+	text-decoration: none;
+	color: white;
+}
+#front-nav a{
+	text-decoration: none;
+
+}
+.bg img{
+position: fixed;
+top:0;
+width: 100%;
+height:100%;
+opacity: 0.6;
+z-index: -100;
+}
+</style>
+</head>
+<body>
+
+<!--<div style="padding: 0.1px;"></div>-->
+<div class="bg">
+	<img src="/static/一级界面/imgs/一级界面.jpg" alt="">
+</div>
+
+<div id="front-nav">
+	{% if params.uname %}
+		<span>欢迎：{{params.uname}}</span><a href="/sign_out" >[退出]</a>
+	{% else %}
+		<a href="/login" style="color: white">[登录]</a>
+		<a href="/register" style="color: white">[注册]</a>
+	{% endif %}
+</div>
+<div id="sequence" class="seq">
+<ul class="seq-canvas">
+  <li class="seq-step1 seq-valign seq-in">
+	<div class="seq-vcenter">
+	  <img data-seq class="seq-feature search" src="static/一级界面/imgs/search.png" alt="A cartoon illustration of a bunch of search" width="389" height="300" srcset="static/一级界面/imgs/search.png 1x, static/一级界面/imgs/search@2x.png 2x" />
+	  <h2 data-seq class="seq-title">search</h2>
+	</div>
+  </li>
+
+  <li class="seq-step2 seq-valign">
+	<div class="seq-vcenter">
+	  <img data-seq class="seq-feature history" src="static/一级界面/imgs/history.png" alt="A cartoon illustration of half a history" width="325" height="300" srcset="static/一级界面/imgs/history.png 1x, static/一级界面/imgs/history@2x.png 2x" />
+	  <h2 data-seq class="seq-title">history</h2>
+	</div>
+  </li>
+
+  <li class="seq-step3 seq-valign">
+	<div class="seq-vcenter">
+	  <img data-seq class="seq-feature game" src="static/一级界面/imgs/game.png" alt="A cartoon illustration of a round game" width="380" height="380" srcset="static/一级界面/imgs/game.png 1x, static/一级界面/imgs/game@2x.png 2x" />
+		  <!-- <img data-seq class="seq-feature" src="images/game.png" alt="A cartoon illustration of a round game" width="380px" height="380px"> -->
+
+	  <h2 data-seq class="seq-title">game</h2>
+	</div>
+  </li>
+</ul>
+
+<fieldset class="seq-nav" aria-label="Slider buttons" aria-controls="sequence">
+
+  <button type="button" class="seq-prev" aria-label="Previous">
+	<img src="static/一级界面/imgs/prev.svg" alt="Previous" />
+  </button>
+
+  <ul role="navigation" aria-label="Pagination" class="seq-pagination">
+	<li class="seq-current">
+	  <!--<a href="/dict_kinds" rel="step1" title="Go to search">-->
+		<img src="static/一级界面/imgs/tn-search@2x.png" alt="search" width="50" height="50" />
+	  <!--</a>-->
+	</li>
+	<li>
+	  <!--<a href="/history_kinds" rel="step2" title="Go to history">-->
+		<img src="static/一级界面/imgs/tn-history@2x.png" alt="history" width="50" height="50" />
+	  <!--</a>-->
+	</li>
+	<li>
+	  <!--<a href="/game_kinds" rel="step3" title="Go to game">-->
+		<img src="static/一级界面/imgs/tn-game@2x.png" alt="game" width="50" height="50" />
+	  <!--</a>-->
+	</li>
+  </ul>
+
+  <button type="button" class="seq-next" aria-label="Next">
+	<img src="static/一级界面/imgs/next.svg" alt="Next" />
+  </button>
+
+</fieldset>
+</div>
+
+<script src="static/一级界面/scripts/imagesloaded.pkgd.min.js"></script>
+<script src="static/一级界面/scripts/hammer.min.js"></script>
+<script src="static/一级界面/scripts/sequence.min.js"></script>
+<script src="static/一级界面/scripts/sequence-theme.mono.js"></script>
+<script src="static/一级界面/js/jquery-2.1.1.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+  $('.search').dblclick(function(){
+  	// 双击进入二级界面 把www.baidu换成二级界面的地址
+    location.href='/dict_kinds'
+  });
+  $('.history').dblclick(function(){
+  	// 双击进入二级界面 把www.baidu换成二级界面的地址
+    location.href='/history_kinds'
+  });
+
+  $('.game').dblclick(function(){
+  	// 双击进入二级界面 把www.baidu换成二级界面的地址
+    location.href='/game_kinds'
+  });
+});
+</script>
+
+</body>
+</html>

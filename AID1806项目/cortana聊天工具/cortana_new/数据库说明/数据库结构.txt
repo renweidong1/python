@@ -1,0 +1,3 @@
+group_list表user设外键，关联setup表的主键I
+group_list表id设为主键，自增长
+friend_list表user_group设为外键关联group_list的主键id

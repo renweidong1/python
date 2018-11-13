@@ -1,0 +1,124 @@
+QLineEdit{
+    font-size:16px;
+    border:none;
+    border-bottom:1px solid;
+    border-color:gray;
+    background-color:rgba(0,0,0,0);
+    font-family:"幼圆"
+}
+QPushButton#pushButton_2{
+    background-color:orange;
+    color:white;
+    border-radius:5px;
+    font-size:18px;
+    font-family:"黑体"
+}
+QPushButton#pushButton_5{
+    background-color:orange;
+    color:white;
+    border-radius:5px;
+    font-size:18px;
+    font-family:"黑体"
+}
+QPushButton#pushButton{
+    border:none;
+    background-color:rgba(0,0,0,0);
+    color:blue;
+    font-size:18px;
+}
+QPushButton#pushButton_4{
+    border:none;
+    background-color:rgba(0,0,0,0);
+    color:blue;
+    font-size:18px;
+}
+QLabel#label_1{
+    font-family:'微软雅黑';
+    font-size:14px;
+}
+QLabel#label_3{
+    font-family:'微软雅黑';
+    font-size:14px;
+}
+QPushButton#pushButton_3{
+    border:none;
+    background-color:rgba(0,0,0,0);
+    color:blue;
+    font-size:14px;
+    font-family:'黑体'
+}
+QPushButton#pushButton_6{
+    border:none;
+    background-color:rgba(0,0,0,0);
+    color:blue;
+    font-size:14px;
+    font-family:'黑体'
+}
+QLabel#label_2{
+    font-family:'微软雅黑';
+    font-size:14px;
+    font-weight:bold;
+    font-style:italic;
+    text-decoration:underline;
+}
+QLabel#label_2:hover{
+    color:blue;
+}
+QLabel#label_4{
+    font-family:'微软雅黑';
+    font-size:14px;
+    font-weight:bold;
+    font-style:italic;
+    text-decoration:underline;
+}
+QLabel#label_4:hover{
+    color:blue;
+}
+QPushButton#pushButton_3:hover{
+    color:red;
+}
+QPushButton#pushButton_6:hover{
+    color:red;
+}
+QPushButton#pushButton_7{
+    color:white;
+    border:2px solid orange;
+    background-color:orange;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    font-family:"幼圆"
+}
+QPushButton#pushButton_8{
+    color:white;
+    border:2px solid orange;
+    background-color:orange;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    font-family:"幼圆"
+}
+QPushButton#myplace{
+    background-color: rgba(0,0,0,0);
+}
+QTextBrowser{
+    border: none;
+    background-color: rgba(0,0,0,0.1);
+}
+QTextBrowser#textBrowser{
+    border-width: 2px 2px 2px 2px;
+    border-radius:15px;
+    font-size:18px;
+    background-color:rgb(240,240,240 );
+    color:blue;
+}
+QTextEdit{
+    border: none;
+    background-color:rgba(0,0,0,0.1);
+}
+QTextEdit#textEdit{
+    border-width: 2px 2px 2px 2px;
+    border-radius:15px;
+    font-size:18px;
+    background-color:white;
+}

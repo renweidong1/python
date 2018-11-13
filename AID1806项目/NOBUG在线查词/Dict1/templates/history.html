@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>歷史記錄</title>
+	<link rel="stylesheet" href="static/二级界面/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="static/二级界面/css/default.css">
+	<link rel="stylesheet" href="static/二级界面/css/index.css">
+	<style type="text/css">
+		#front-nav {
+			color: black;
+			padding:10px 0 0 10px;
+		}
+		#front-nav a{
+			text-decoration: none;
+			color: red;
+		}
+		#front-nav a{
+			text-decoration: none;
+
+		}
+		.bg img{
+		position: fixed;
+		top:0;
+		width: 100%;
+		height:100%;
+		opacity: 0.6;
+		z-index: -100;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="bg">
+		<img src="/static/二级界面/imgs/二级界面.jpg" alt="">
+	</div>
+	<div id="front-nav">
+		{% if params.uname %}
+        <span>欢迎：{{params.uname}}</span><a href="/index" >[返回上一级]</a>
+		{% else %}
+			<a href="/index" >[返回上一级]</a>
+		{% endif %}
+		<!-- 这块把用户名写上-->
+	</div>
+
+	<div class="htmleaf-container">
+
+		<div class="htmleaf-content">
+			<div id="vitrine" class="container">
+				<div data-desc="中英">
+				<img src="static/二级界面/imgs/中英.png " name="ch-en">
+				</div>
+				<div data-desc="中日">
+				<img src="static/二级界面/imgs/中日.png" name="ch-ja">
+				</div>
+				<div data-desc="中韩">
+				<img src="static/二级界面/imgs/中韩.png" name="ch-co">
+				</div>
+				<div data-desc="中德">
+				<img src="static/二级界面/imgs/中德.png" name="ch-ge">
+				</div>
+				<div data-desc="中葡">
+				<img src="static/二级界面/imgs/中葡.png" name="ch-po">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="static/二级界面/js/jquery-2.1.1.min.js"></script>
+	<script src="static/二级界面/js/jQuery.vitrine.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#vitrine').vitrine({title:'词典种类',color:'#fff'});
+		});
+	</script>
+
+	<script type="text/javascript">
+//		$(function(){
+//			$('#vitrine').dblclick(function(){
+//			    console.log($(this).attr('name'));
+////				location.href='/search_before?dict='+$(this).attr('name')
+//			});
+//		});
+		$(function(){
+		    $("[name='ch-en']").dblclick(function(){
+		        location.href='/history_show?dict='+$(this).attr('name')
+			});
+
+		    $("[name='ch-ja']").dblclick(function(){
+		        location.href='/history_show?dict='+$(this).attr('name')
+			});
+
+		    $("[name='ch-co']").dblclick(function(){
+		        location.href='/history_show?dict='+$(this).attr('name')
+			});
+
+		    $("[name='ch-ge']").dblclick(function(){
+		        location.href='/history_show?dict='+$(this).attr('name')
+			});
+
+		    $("[name='ch-po']").dblclick(function(){
+		        location.href='/history_show?dict='+$(this).attr('name')
+			});
+		});
+
+	</script>
+</body>
+</html>

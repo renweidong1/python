@@ -1,0 +1,5 @@
+whole_server  是主服务器
+user_info  是pymysql
+xinlogin   是客户端
+project.sql  是数据库备份
+

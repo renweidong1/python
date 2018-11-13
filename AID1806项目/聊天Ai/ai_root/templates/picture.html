@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PICTURE</title>
+    <link rel="stylesheet" href="/static/css/picture.css">
+</head>
+<body>
+    <div class="pagebg sh"></div>
+    <div class="fm">
+        <form action="/picture-server" method="post" enctype="multipart/form-data">
+            <p>上传图片 : <input type="file" name="picture"></p>
+            <p><input type="submit" value="提交"></p>
+        </form>
+    </div>
+    <article style="margin-top:20px;">
+		<div class="container ">
+			<h1 class="t_nav"><span>不要轻易放弃。学习成长的路上，我们长路漫漫，只因学无止境。 </span>
+				<p class="n1">个人相册</p>
+			</h1>
+			<div class="blogsbox">
+                {% for pic in params.user.pictures %}
+                    <div class="infosbox">
+                        <img src="/static/{{pic.img}}" alt="">
+                    </div>
+                {% endfor %}
+			</div>
+		</div>
+	</article>
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>查詢</title>
+	<link rel="stylesheet" type="text/css" href="static/查询界面/css/搜索部分.css">
+	<style>
+		#front-nav {
+			color: black;
+			padding:10px 0 0 10px;
+		}
+		#front-nav a{
+			text-decoration: none;
+			color: red;
+		}
+		#front-nav a:hover {
+			color:blue;
+		}
+		.bg img{
+		position: fixed;
+		top:0;
+		width: 100%;
+		height:100%;
+		opacity: 0.6;
+		z-index: -100;
+		}
+	</style>
+</head>
+<body>
+  <div id="front-nav">
+    {% if params.uname %}
+        <span>欢迎：{{params.uname}}</span><a href="/dict_kinds" >[返回上一级]</a>
+    {% else %}
+        <a href="/dict_kinds" >[返回上一级]</a>
+    {% endif %}
+  </div>
+	<div class="bg">
+		<img src="/static/查询界面/imgs/search-background.jpg" alt="">
+	</div>
+	<div id="search-link">
+		<img src="static/查询界面/imgs/logo.png">
+		<form  action="/search_before" method="post">
+			<input type="hidden" value="{{params.dict}}" name="dict">
+			<input type="text" name="searchword">
+			<input type="submit" value="翻译">
+		</form>
+			
+	</div>
+
+</body>
+</html>

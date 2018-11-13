@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一级界面</title>
+<style>
+	body{
+		font-family: "microsoft yahei";
+	}
+	.seq-feature:hover {
+		cursor: pointer;
+	}
+
+</style>
+<link href="css/sequence-theme.mono.css" rel="stylesheet" media="all">
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+#front-nav {
+	color: red;	
+	padding:10px 0 0 10px;
+}
+#front-nav a{
+	text-decoration: none;
+	color: white;
+}
+#front-nav a{
+	text-decoration: none;
+
+}
+</style>
+</head>
+<body>
+<div style="padding: 0.1px;"></div>
+<div id="front-nav" style="background-color: #2A93BC;">
+	<span>欢迎：</span><a href="" >[退出]</a>
+</div>
+<div id="sequence" class="seq">
+
+<ul class="seq-canvas">
+  <li class="seq-step1 seq-valign seq-in">
+	<div class="seq-vcenter">
+	  <img data-seq class="seq-feature" src="images/search.png" alt="A cartoon illustration of a bunch of search" width="389" height="300" srcset="images/search.png 1x, images/search@2x.png 2x" />
+	  <h2 data-seq class="seq-title">search</h2>
+	</div>
+  </li>
+
+  <li class="seq-step2 seq-valign">
+	<div class="seq-vcenter">
+	  <img data-seq class="seq-feature" src="images/history.png" alt="A cartoon illustration of half a history" width="325" height="300" srcset="images/history.png 1x, images/history@2x.png 2x" />
+	  <h2 data-seq class="seq-title">history</h2>
+	</div>
+  </li>
+
+  <li class="seq-step3 seq-valign">
+	<div class="seq-vcenter">
+	  <img data-seq class="seq-feature" src="images/game.png" alt="A cartoon illustration of a round game" width="380" height="380" srcset="images/game.png 1x, images/game@2x.png 2x" />
+		  <!-- <img data-seq class="seq-feature" src="images/game.png" alt="A cartoon illustration of a round game" width="380px" height="380px"> -->
+
+	  <h2 data-seq class="seq-title">game</h2>
+	</div>
+  </li>
+</ul>
+
+<fieldset class="seq-nav" aria-label="Slider buttons" aria-controls="sequence">
+
+  <button type="button" class="seq-prev" aria-label="Previous">
+	<img src="images/prev.svg" alt="Previous" />
+  </button>
+
+  <ul role="navigation" aria-label="Pagination" class="seq-pagination">
+	<li class="seq-current">
+	  <a href="#step1" rel="step1" title="Go to search">
+		<img src="images/tn-search@2x.png" alt="search" width="50" height="50" />
+	  </a>
+	</li>
+	<li>
+	  <a href="#step2" rel="step2" title="Go to history">
+		<img src="images/tn-history@2x.png" alt="history" width="50" height="50" />
+	  </a>
+	</li>
+	<li>
+	  <a href="#step3" rel="step3" title="Go to game">
+		<img src="images/tn-game@2x.png" alt="game" width="50" height="50" />
+	  </a>
+	</li>
+  </ul>
+
+  <button type="button" class="seq-next" aria-label="Next">
+	<img src="images/next.svg" alt="Next" />
+  </button>
+
+</fieldset>
+</div>
+<script src="scripts/imagesloaded.pkgd.min.js"></script>
+<script src="scripts/hammer.min.js"></script>
+<script src="scripts/sequence.min.js"></script>
+<script src="scripts/sequence-theme.mono.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+  $('.seq-feature').dblclick(function(){
+  	// 双击进入二级界面 把www.baidu换成二级界面的地址
+    location.href='www.baidu.com'
+  });
+});
+</script>
+
+</body>
+</html>

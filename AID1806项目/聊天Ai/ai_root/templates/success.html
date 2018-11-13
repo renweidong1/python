@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SUCCESS</title>
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <style>
+        .conn{
+            width: 400px;
+            margin: 30px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="conn">
+        <h1>{{ msg }}成功 !!!</h1>
+        <h3 class="tim"></h3>
+    </div>
+
+<script>
+    var tim = 5;
+    timer = setInterval(function () {
+        $('.tim').html(tim+'秒钟进入主页...');
+        tim-=1;
+        if (tim<=0){
+             window.location.href="/";
+        }
+
+    },1000);
+</script>
+</body>
+</html>

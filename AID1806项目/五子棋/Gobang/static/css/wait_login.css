@@ -1,0 +1,50 @@
+body{
+	background-image: url('../images/wait_login.jpg');
+    background-repeat: no-repeat;
+    background-size:100% 100%; 
+    background-attachment: fixed;
+	margin: 0px;
+    width: 1440px;
+}
+a{
+    font-size: 28px;
+}
+.d1{
+	width: 750px;
+}
+.d2{
+	border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 28px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid white;
+    width: 400px;
+    margin-top: 350px;
+    margin-left: 500px;
+    color: #33FF00
+}
+.d2:hover{
+	background-color: white;
+	box-shadow: 0 16px 20px 0 rgba(0,0,0,0.24),
+    0 20px 53px 0 rgba(0,0,0,0.19);
+}
+.d2:focus{
+    outline:none;
+}
+.d3{
+    width:300px;
+    padding-left: 600px;
+}
+.d4{
+    color: ghostwhite;
+    font-size:24px;
+    text-align: center;
+}
+.d5{
+    width:300px;
+    padding-left: 620px;
+}

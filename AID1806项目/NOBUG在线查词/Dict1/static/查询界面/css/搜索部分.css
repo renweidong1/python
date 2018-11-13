@@ -1,0 +1,45 @@
+html,body,div,p {
+	margin:0;
+	padding: 0;
+}
+/*body {*/
+	/*width: 1200px;*/
+	/*height: 600px;*/
+	/*margin:0 auto;*/
+/*}*/
+
+#nav a {
+	text-decoration: none;
+	color: black;
+}
+#nav a:hover {
+	color:blue;
+}
+#search-link {
+	width: 1200px;
+	height: 200px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top:70px;
+
+}
+#search-link [type=text]{
+	width: 400px;
+	height: 54px;
+	border-radius: 10px;
+	outline: none;
+	font-size: 20px;
+
+}
+#search-link [type=submit]{
+	width: 90px;
+	height: 60px;
+	background-color: #dd0a20;
+	color: white;
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+#prononce span{
+	font-size: 20px;
+}
